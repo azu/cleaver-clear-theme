@@ -27,6 +27,15 @@ function navigate(n) {
     updateTabIndex();
 }
 
+
+/**
+ * Updates the current URL to include a hashtag of the current page number.
+ */
+function updateURL() {
+    window.history.replaceState({}, null, '#' + currentPosition());
+}
+
+
 /**
  * Sets the progress indicator.
  */
@@ -85,6 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    document.querySelector(".permanent-link").addEventListener("click", function () {
+        updateURL();
+    });
     if (document.querySelector('.next') && document.querySelector('.prev')) {
         document.querySelector('.next').onclick = function (e) {
             e.preventDefault();

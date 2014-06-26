@@ -177,6 +177,10 @@ body {
   border-left-color: #888;
   cursor: pointer; }
 
+.permanent-link {
+  background-image: url("http://azu.github.io/cleaver-clear-theme/hyperlink.svg");
+  background-size: 100% 100%; }
+
 h1 {
   font-size: 300%;
   line-height: 1.2;
