@@ -1,4 +1,12 @@
 /**
+ * is debug mode
+ * @returns {Number}
+ */
+function isDebugMode(){
+    return /^localhost$/.test(location.hostname);
+}
+
+/**
  * Returns the current page number of the presentation.
  */
 function currentPosition() {
@@ -22,7 +30,9 @@ function navigate(n) {
 
     document.getElementById('slide-' + position).classList.add('hidden');
     document.getElementById('slide-' + nextPosition).classList.remove('hidden');
-
+    if(isDebugMode()) {
+        updateURL();
+    }
     updateProgress();
     updateTabIndex();
 }
@@ -94,7 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    document.querySelector(".permanent-link").addEventListener("click", function () {
+    document.querySelector(".permanent-link").addEventListener("click", function (evt) {
+        evt.preventDefault();
         updateURL();
     });
     if (document.querySelector('.next') && document.querySelector('.prev')) {
