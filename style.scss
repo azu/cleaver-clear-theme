@@ -1,7 +1,13 @@
 @import "github";
 
+@font-face {
+  font-style: italic;
+  font-weight: 700;
+  font-family: 'PT Mono';
+}
+
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 25px/2 "PT Sans", sans-serif;
   color: #222;
   background-color: #f7f7f7;
   font-size: 100%;
@@ -18,13 +24,19 @@ body {
 .slide-content {
   width: 70%;
   height: 90%;
-  overflow: hidden;
   margin: auto;
   padding: 30px;
 
   font-weight: 200;
   font-size: 200%;
   line-height: 1.375;
+  // over parent container
+  // http://stackoverflow.com/questions/20676443/whats-the-best-way-to-break-a-div-outside-of-a-its-set-width-parent-container
+  > h1 {
+    text-align: center;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
 }
 
 .controls {
@@ -94,7 +106,7 @@ h1 {
   font-size: 300%;
   line-height: 1.2;
   text-align: center;
-  margin: 170px 0 0;
+  margin: 1em 0 0;
 }
 
 h2 {
@@ -113,10 +125,15 @@ h3 {
   padding-bottom: 15px;
 }
 
-ul {
-  padding: 20px 0 0 60px;
+.slide ol, .slide ul {
+  margin: 50px 0;
+  counter-reset: list;
   font-weight: 200;
-  line-height: 1.375;
+  line-height: 1.5;
+}
+
+.slide ol ol, .slide ol ul, .slide ul ol, .slide ul ul {
+  margin: 0px 0px 0px 2em;
 }
 
 .author h1 {
@@ -185,7 +202,7 @@ pre {
   }
 
   h1 {
-    margin-top: 120px;
+    margin-top: 0.8em;
   }
 
   .prev, .prev:hover {
@@ -206,11 +223,11 @@ pre {
   .slide-content {
     padding: 10px;
     margin-top: 10px;
-    height:80%;
+    height: 80%;
   }
 
   h1 {
-    margin-top: 50px;
+    margin-top: 0.5em;
   }
 
   ul {
@@ -269,3 +286,17 @@ pre {
   }
 }
 
+.background-image-center {
+  background: no-repeat center top;
+}
+
+/* user extension */
+.full {
+  background-size: cover;
+  @extend .background-image-center;
+}
+
+.fit {
+  background-size: contain;
+  @extend .background-image-center;
+}
