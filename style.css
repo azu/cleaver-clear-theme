@@ -139,8 +139,10 @@ body {
 
 .controls {
   position: absolute;
-  bottom: 20px;
-  left: 20px; }
+  bottom: 0;
+  left: 0;
+  margin: 1%;
+  width: 99%; }
 
 .arrow {
   width: 0;
@@ -178,9 +180,10 @@ body {
   cursor: pointer; }
 
 .permanent-link {
-  float: left;
-  width: 50px;
-  height: 50px; }
+  float: right;
+  right: 0; }
+  .permanent-link:hover {
+    cursor: pointer; }
   .permanent-link svg {
     width: 60px;
     height: 60px; }
@@ -278,7 +281,7 @@ pre {
   .slide-content {
     padding: 10px;
     margin-top: 10px;
-    height: 340px; }
+    height: 80%; }
 
   h1 {
     margin-top: 50px; }

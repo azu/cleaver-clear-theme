@@ -29,8 +29,10 @@ body {
 
 .controls {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 0;
+  left: 0;
+  margin: 1%;
+  width: 99%;
 }
 
 .arrow {
@@ -77,11 +79,11 @@ body {
 }
 
 .permanent-link {
-  //  background-image: url("http://azu.github.io/cleaver-clear-theme/hyperlink.svg");
-  //  background-size: 100% 100%;
-  float: left;
-  width: 50px;
-  height: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+  float: right;
+  right: 0;
   svg {
     width: 60px;
     height: 60px;
@@ -204,7 +206,7 @@ pre {
   .slide-content {
     padding: 10px;
     margin-top: 10px;
-    height: 340px;
+    height:80%;
   }
 
   h1 {
